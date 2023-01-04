@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function confirm() {
+            var username = document.LoginForm.username.value;
+            var password = document.LoginForm.password.value;
+            if (username == "") {
+                alert("Username empty");
+            }
+            else {
+                if (password == "") {
+                    alert("Password empty");
+                } else {
+                    //not empty
+                    // make sure doesn't contain any special words
+                    if(password !="select" && password !="insert"){
+                        alert("Successfully");
+                    }else{
+                        alert("Special words not allowed"); 
+                    }
+                    
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Login</h1>
+    <form name="LoginForm" method="post"> <!-- centerly aligned -->
+        <input type="text" class="username" name="username" placeholder="Username"> <br>
+        <input type="password" class="password" name="password" placeholder="Password"> <br>
+        <input type="checkbox" name="remember_me">Remember Me
+        <a href="forget.php">Forget Password</a> <br><br>
+        <input type="submit" id="login" name="submit" onclick="confirm()" value="Login">
+    </form>
+
+    <br>
+
+    <div class="rest">
+        <h2>Login</h2>
+        <h3>With your social media account</h3>
+        <button>
+            <img style="width:24px; height:24px" src="./images/twitter.png" alt="alt"><span>Twitter</span>
+        </button>
+        <button>
+            <img style="width:24px; height:24px" src="./images/facebook.png" alt="alt"><span>Facebook</span>
+        </button>
+        <button>
+            <img style="width:24px; height:24px" src="./images/google.png" alt="alt"><span>Google</span>
+        </button>
+        
+        <br><br><br>
+    </div>
+
+    <p>Don't have an account, register now</p>
+    <input type="submit" id="login" name="submit" value="Register">
+
+</body>
+
+</html>
